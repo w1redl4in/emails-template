@@ -1,18 +1,4 @@
-const nodemailer = require('nodemailer');
-
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: 'ecommercedosdev@gmail.com',
-    pass: 'r6123456',
-  },
-});
-
-const mailOptions = {
-  from: 'ecommercedosdev@gmail.com',
-  to: ['felipe1180@hotmail.com', 'fnego5384@gmail.com'],
-  subject: 'Cadastro no Ecommerce',
-  html: `<!DOCTYPE html>
+<!DOCTYPE html>
   <html lang="en">
     <head>
       <meta charset="UTF-8" />
@@ -110,8 +96,8 @@ const mailOptions = {
                 <p style="font-weight: normal;">
                   Sequelou com a senha né cria?! Relaxa que a gente dá um jeito!
                 </p>
-                <p style="color: white;font-size: 14px;font-weight: 600;padding: 20px 0;width: 180px;background: linear-gradient(90deg, rgba(255, 81, 47, 0.45) 0%, rgba(245, 0, 87, 0.45) 100%);">
-                 00000000
+                <p style="color: black;font-size: 14px;font-weight: 600;">
+                 ${password}
                 </p>
                 <p style="font-weight: normal;">
                   Agradecemos o seu contato qualquer violação reclamar na boca.
@@ -227,12 +213,4 @@ const mailOptions = {
         </table>
       </center>
     </body>
-  </html>`,
-};
-
-transporter.sendMail(mailOptions, (err, info) => {
-  if (err) {
-    return console.log(err);
-  }
-  return console.log(info);
-});
+  </html>
